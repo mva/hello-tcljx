@@ -8,11 +8,13 @@ This repository serves as a basic project template, using the classic
 - Linux.  Has not been tested with Window or macOS *at all*.
 
 - Whatever build of [OpenJDK](https://jdk.java.net/) tcljx is
-  currently using.  At the time of writing this means OpenJDK 26 or
+  currently using.  At the time of writing this means OpenJDK 25 or
   later.
 
-- A copy of `tcljx`'s modules from the directory created by running
-  "make bootstrap-mdir" in `tcljx`s repository.
+- A copy of `tcljx`'s modules from repository
+  [bootstrap-tcljx](https://github.com/mva/bootstrap-tcljx) that match
+  the OpenJDK build.  As long as there are no releases, the modules
+  will be distributed as a repository of class files.
 
 ### Running the Thing
 
@@ -28,6 +30,7 @@ The makefile reads two environment variables:
   `$JAVA_HOME/bin/java` will be used.  Default is
   `~/local/jdk-classfile`.
 
-- `TCLJX_MDIR` is the directory holding the modules that comprise the
-  compiler: runtime, core libraries, alpha libraries, and the compiler
-  classes.  Default is `/tmp/$USER/tcljx-stage2.mdir-jar`.
+- `TCLJX_MDIR` is the bootstrap-tcljx directory holding the modules
+  that comprise the compiler: runtime, core libraries, alpha
+  libraries, and the compiler classes.  Default is
+  `../bootstrap-tcljx`.

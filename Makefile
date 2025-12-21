@@ -1,5 +1,5 @@
 JAVA_HOME ?= ~/local/jdk-classfile
-TCLJX_MDIR ?= /tmp/$(USER)/tcljx-stage2.mdir-jar
+TCLJX_MDIR ?= ../bootstrap-tcljx
 
 JAVA_BIN=$(if $(JAVA_HOME),$(JAVA_HOME)/bin/,)
 JAVA=$(JAVA_BIN)java
