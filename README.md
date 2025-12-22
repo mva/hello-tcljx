@@ -7,9 +7,9 @@ This repository serves as a basic project template, using the classic
 
 - Linux.  Has not been tested with Window or macOS *at all*.
 
-- Whatever build of [OpenJDK](https://jdk.java.net/) tcljx is
-  currently using.  At the time of writing this means OpenJDK 25 or
-  later.
+- An **early-access** build of [OpenJDK](https://jdk.java.net/) (at
+  the time of writing JDK 26 EA Build 29) that includes [JEP 525:
+  Structured Concurrency](https://openjdk.org/jeps/525).
 
 - A copy of `tcljx`'s modules from repository
   [bootstrap-tcljx](https://github.com/mva/bootstrap-tcljx) that match
