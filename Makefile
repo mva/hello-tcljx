@@ -36,14 +36,14 @@ DEST_DIR=/tmp/$(USER)/tcljx/$(PROJECT_DIR)
 # Run static main method of hello.core using compiled classes.  Uses
 # output of "make compile".  Does not load compiler classes.
 run-main:
-	$(JAVA) -p $(TCLJX_MDIR) --add-modules tcljx.core -cp $(DEST_DIR) $(MAIN_NS).___ $(ARGS)
+	$(JAVA) $(JAVA_OPTS) -p $(TCLJX_MDIR) --add-modules tcljx.core -cp $(DEST_DIR) $(MAIN_NS).___ $(ARGS)
 
 
 
 # Run static main method of namespace hello.run-tests using compiled
 # classes.  Uses output of "make compile".
 test:
-	$(JAVA) --enable-preview -p $(TCLJX_MDIR) --add-modules tcljx.alpha -cp $(DEST_DIR) $(RUN_TESTS_NS).___
+	$(JAVA) $(JAVA_OPTS) -p $(TCLJX_MDIR) --add-modules tcljx.alpha -cp $(DEST_DIR) $(RUN_TESTS_NS).___
 
 # Loop: Watch for updates to source files, then compile & run tests.
 watch-and-test:
