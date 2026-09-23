@@ -9,6 +9,7 @@ TCLJX_OPTS=$(JAVA_OPTS) -p $(TCLJX_MDIR) -m tcljx.compiler
 
 MAIN_NS=hello.core
 RUN_TESTS_NS=hello.run-tests
+RUN_TESTS=hello.run-tests/run
 
 
 # Compile namespace to classes in default destination directory
@@ -40,14 +41,13 @@ run-main:
 
 
 
-# Run static main method of namespace hello.run-tests using compiled
-# classes.  Uses output of "make compile".
+# Compile, then run tests.
 test:
-	$(JAVA) $(JAVA_OPTS) -p $(TCLJX_MDIR) --add-modules tcljx.alpha -cp $(DEST_DIR) $(RUN_TESTS_NS).___
+	$(JAVA) $(TCLJX_OPTS) $(RUN_TESTS)
 
 # Loop: Watch for updates to source files, then compile & run tests.
 watch-and-test:
-	$(JAVA) $(TCLJX_OPTS) --watch $(RUN_TESTS_NS)/run
+	$(JAVA) $(TCLJX_OPTS) --watch $(RUN_TESTS)
 
 
 clean:
