@@ -31,8 +31,8 @@ watch-and-run:
 
 
 # Default destination directory of the compiler.
-PROJECT_DIR=$(notdir $(PWD))
-DEST_DIR=/tmp/$(USER)/tcljx/$(PROJECT_DIR)
+PROJECT_NAME=$(notdir $(PWD))
+DEST_DIR=/tmp/$(USER)/tcljx/$(PROJECT_NAME)
 
 # Run static main method of hello.core using compiled classes.  Uses
 # output of "make compile".  Does not load compiler classes.
