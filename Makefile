@@ -49,6 +49,11 @@ test:
 watch-and-test:
 	$(JAVA) $(TCLJX_OPTS) --watch $(RUN_TESTS)
 
+# Run static main method of namespace hello.run-tests using compiled
+# classes.  Uses output of "make compile".
+run-tests:
+	$(JAVA) $(JAVA_OPTS) -p $(TCLJX_MDIR) --add-modules tcljx.alpha -cp $(DEST_DIR) $(RUN_TESTS_NS).___
+
 
 clean:
 	rm -rf "$(DEST_DIR)"/*
